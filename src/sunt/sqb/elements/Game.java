@@ -7,6 +7,7 @@ public class Game {
     private String map;
     private String teamAdverse;
     private Config config;
-    private Joueur leader;
+    private Joueur leader_1;
+    private Joueur leader_2;
     private List<Joueur> joueurs;
 }
