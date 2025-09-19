@@ -31,6 +31,19 @@ public class TableStatsTypeVehicule {
         this.nbMorts += nbMorts;
     }
 
+    public void addStats(TableStatsTypeVehicule stats) {
+        if (this.typeVehicule != stats.typeVehicule) {
+            throw new IllegalArgumentException("Cannot add stats of different vehicle types");
+        }
+        this.nbGames += stats.nbGames;
+        this.nbPoints += stats.nbPoints;
+        this.nbKillsAir += stats.nbKillsAir;
+        this.nbKillsSol += stats.nbKillsSol;
+        this.nbAssistances += stats.nbAssistances;
+        this.nbCaptures += stats.nbCaptures;
+        this.nbMorts += stats.nbMorts;
+    }
+
     public TypeVehicule getTypeVehicule() {
         return typeVehicule;
     }

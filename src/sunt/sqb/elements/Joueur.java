@@ -1,7 +1,5 @@
 package sunt.sqb.elements;
 
-import java.util.List;
-
 /*
  * Classe représentant un joueur avec ses statistiques par type de véhicule.
  * 
@@ -18,6 +16,9 @@ public class Joueur {
     private TableStatsTypeVehicule statsBombardier;
     private TableStatsTypeVehicule statsHelico;
 
+    /*
+     * Constructeur de Joueur
+     */
     public Joueur(String pseudo){
         
         this.pseudo = pseudo;
@@ -30,6 +31,9 @@ public class Joueur {
         this.statsHelico = new TableStatsTypeVehicule(TypeVehicule.HELICO);
     }
 
+    /*
+     * Donne un résumé des stats du joueur, lisible dans le terminal
+     */
     public String resumePartie(int indentation) {
         String indent = "  ".repeat(indentation);
         String resume = pseudo + ":\n"; 
@@ -37,25 +41,28 @@ public class Joueur {
         return resume;
     }
 
-    public void addGameStats(TypeVehicule typeVehicule, List<Integer> stats) {
-        switch (typeVehicule) {
+    /*
+     * Ajoute les statistiques d'une partie à celles du joueur, en fonction du type de véhicule utilisé.
+     */
+    public void addGameStats(TableStatsTypeVehicule gameStats) {
+        switch (gameStats.getTypeVehicule()) {
             case MBT:
-                statsMBT.addStats(stats.get(0), stats.get(1), stats.get(2), stats.get(3), stats.get(4), stats.get(5));
+                statsMBT.addStats(gameStats);
                 break;
             case AA:
-                statsAA.addStats(stats.get(0), stats.get(1), stats.get(2), stats.get(3), stats.get(4), stats.get(5));
+                statsAA.addStats(gameStats);
                 break;
             case DRONE:
-                statsDrone.addStats(stats.get(0), stats.get(1), stats.get(2), stats.get(3), stats.get(4), stats.get(5));
+                statsDrone.addStats(gameStats);
                 break;
             case CHASSEUR:
-                statsChasseur.addStats(stats.get(0), stats.get(1), stats.get(2), stats.get(3), stats.get(4), stats.get(5));
+                statsChasseur.addStats(gameStats);
                 break;
             case BOMBARDIER:
-                statsBombardier.addStats(stats.get(0), stats.get(1), stats.get(2), stats.get(3), stats.get(4), stats.get(5));
+                statsBombardier.addStats(gameStats);
                 break;
             case HELICO:
-                statsHelico.addStats(stats.get(0), stats.get(1), stats.get(2), stats.get(3), stats.get(4), stats.get(5));
+                statsHelico.addStats(gameStats);
                 break;
         }
     }
