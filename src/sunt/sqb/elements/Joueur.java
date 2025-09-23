@@ -46,24 +46,12 @@ public class Joueur {
      */
     public void addGameStats(TableStatsTypeVehicule gameStats) {
         switch (gameStats.getTypeVehicule()) {
-            case MBT:
-                statsMBT.addStats(gameStats);
-                break;
-            case AA:
-                statsAA.addStats(gameStats);
-                break;
-            case DRONE:
-                statsDrone.addStats(gameStats);
-                break;
-            case CHASSEUR:
-                statsChasseur.addStats(gameStats);
-                break;
-            case BOMBARDIER:
-                statsBombardier.addStats(gameStats);
-                break;
-            case HELICO:
-                statsHelico.addStats(gameStats);
-                break;
+            case MBT -> statsMBT.addStats(gameStats);
+            case AA -> statsAA.addStats(gameStats);
+            case DRONE -> statsDrone.addStats(gameStats);
+            case CHASSEUR -> statsChasseur.addStats(gameStats);
+            case BOMBARDIER -> statsBombardier.addStats(gameStats);
+            case HELICO -> statsHelico.addStats(gameStats);
         }
     }
 }
