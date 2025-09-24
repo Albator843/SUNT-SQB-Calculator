@@ -1,27 +1,26 @@
 package sunt.sqb.elements;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Game {
     private int id;
     private String map;
     private String teamAdverse;
-    private Config config;
     private Joueur leader_1;
     private Joueur leader_2;
-    private List<Joueur> joueurs;
+    private Map<Joueur, TableStatsTypeVehicule> joueurs;
 
-    public Game(int id, String map, String teamAdverse, Config config, Joueur leader_1, Joueur leader_2, List<Joueur> joueurs) {
+    public Game(int id, String map, String teamAdverse,Joueur leader_1, Joueur leader_2) {
         this.id = id;
         this.map = map;
         this.teamAdverse = teamAdverse;
-        this.config = config;
         this.leader_1 = leader_1;
         this.leader_2 = leader_2;
-        this.joueurs = joueurs;
+        this.joueurs = new HashMap<>();
     }
 
-    /* 
-     * Remplacer la liste de joueurs par une Map <Joueur, TableStatsTypeVehicule> ?
-     */
+    public void addJoueurStats(Joueur joueur, TableStatsTypeVehicule stats) {
+        this.joueurs.put(joueur, stats);
+    }
 }
