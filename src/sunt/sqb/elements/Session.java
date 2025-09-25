@@ -17,4 +17,28 @@ public class Session {
         this.br = br;
         this.games = new ArrayList();
     }
+
+    public void addGame(Game game) {
+        this.games.add(game);
+    }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getRemplisPar() {
+        return remplisPar;
+    }
+
+    public float getBr() {
+        return br;
+    }
 }
