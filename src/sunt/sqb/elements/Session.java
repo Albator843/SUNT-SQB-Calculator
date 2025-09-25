@@ -10,6 +10,9 @@ public class Session {
     private float br;
     private List<Game> games;
     
+    /*
+     * Constructeur
+     */
     public Session (int id, String date, String remplisPar, float br) {
         this.id = id;
         this.date = date;
@@ -18,26 +21,44 @@ public class Session {
         this.games = new ArrayList();
     }
 
+    /*
+     * Ajoute une game à la session
+     */
     public void addGame(Game game) {
         this.games.add(game);
     }
 
+    /*
+     * Retourne la liste des games de la session
+     */
     public List<Game> getGames() {
         return games;
     }
 
+    /*
+     * Retourne l'ID de la session
+     */
     public int getId() {
         return id;
     }
 
+    /*
+     * Retourne la date de la session
+     */
     public String getDate() {
         return date;
     }
 
+    /*
+     * Retourne qui a rempli les infos de la session
+     */
     public String getRemplisPar() {
         return remplisPar;
     }
 
+    /*
+     * Retourne le BR de la session
+     */
     public float getBr() {
         return br;
     }
