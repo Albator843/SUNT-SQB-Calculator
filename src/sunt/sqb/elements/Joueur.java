@@ -32,12 +32,66 @@ public class Joueur {
     }
 
     /*
-     * Donne un résumé des stats du joueur, lisible dans le terminal
+     * Retourne le pseudo du joueur
      */
-    public String resumePartie(int indentation) {
+    public String pseudo() {
+        return pseudo;
+    }
+
+    /*
+     * Retourne les stats MBT du joueur
+     */
+    public TableStatsTypeVehicule statsMBT() {
+        return statsMBT;
+    }
+
+    /*
+     * Retourne les stats AA du joueur
+     */
+    public TableStatsTypeVehicule statsAA() {
+        return statsAA;
+    }
+
+    /*
+     * Retourne les stats Drone du joueur
+     */
+    public TableStatsTypeVehicule statsDrone() {
+        return statsDrone;
+    }
+
+    /*
+     * Retourne les stats Chasseur du joueur
+     */
+    public TableStatsTypeVehicule statsChasseur() {
+        return statsChasseur;
+    }
+
+    /*
+     * Retourne les stats Bombardier du joueur
+     */
+    public TableStatsTypeVehicule statsBombardier() {
+        return statsBombardier;
+    }
+
+    /*
+     * Retourne les stats Hélico du joueur
+     */
+    public TableStatsTypeVehicule statsHelico() {
+        return statsHelico;
+    }
+
+    /*
+     * Donne un résumé des stats du joueur, sous forme d'un String.
+     */
+    public String resumeStatsJoueur(int indentation) {
         String indent = "  ".repeat(indentation);
         String resume = pseudo + ":\n"; 
-        
+        resume += "Stats MBT : \n" + statsMBT.resumeStats(indentation*2);
+        resume += "Stats AA : \n" + statsAA.resumeStats(indentation*2);
+        resume += "Stats Drone : \n" + statsDrone.resumeStats(indentation*2);
+        resume += "Stats Chasseur : \n" + statsChasseur.resumeStats(indentation*2);
+        resume += "Stats Bombardier : \n" + statsBombardier.resumeStats(indentation*2);
+        resume += "Stats Hélico : \n" + statsHelico.resumeStats(indentation*2);
         return resume;
     }
 

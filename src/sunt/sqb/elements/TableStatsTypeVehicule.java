@@ -123,4 +123,22 @@ public class TableStatsTypeVehicule {
     public int[] getStats() {
         return new int[] {nbGames, nbPoints, nbKillsAir, nbKillsSol, nbAssistances, nbCaptures, nbMorts};
     }
+
+    /*
+     * Donne un résumé des stats, sous la forme d'un String
+     */
+    public String resumeStats(int indentation) {
+        String indent = "  ".repeat(indentation);
+        String resume = typeVehicule + ":\n";
+        resume += indent + "  Parties jouées: " + nbGames + "\n";
+        resume += indent + "  Points: " + nbPoints + "\n"; 
+        resume += indent + "  Kills Air: " + nbKillsAir + "\n";
+        resume += indent + "  Kills Sol: " + nbKillsSol + "\n";
+        resume += indent + "  Assistances: " + nbAssistances + "\n";
+        resume += indent + "  Captures: " + nbCaptures + "\n";
+        resume += indent + "  Morts: " + nbMorts + "\n";
+        return resume;
+    }
+
+    
 }
