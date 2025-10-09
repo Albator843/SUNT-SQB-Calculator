@@ -62,4 +62,20 @@ public class Session {
     public float getBr() {
         return br;
     }
+
+    /*
+     * Retourne un résumé des statistiques de la session avec une indentation donnée, sous forme d'un String.
+     */
+    public String resumeStatsSession(int indentation) {
+        String indent = "  ".repeat(indentation);
+        String resume = indent + "Session ID: " + id + "\n";
+        resume += indent + "Date: " + date + "\n";
+        resume += indent + "Remplis Par: " + remplisPar + "\n";
+        resume += indent + "BR: " + br + "\n";
+        resume += indent + "Games:\n";
+        for (Game game : games) {
+            resume += game.resumeStatsGame(indentation + 1);
+        }
+        return resume;
+    }
 }
