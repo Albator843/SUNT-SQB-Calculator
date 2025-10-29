@@ -68,14 +68,14 @@ public class Session {
      */
     public String resumeStatsSession(int indentation) {
         String indent = "  ".repeat(indentation);
-        String resume = indent + "Session ID: " + id + "\n";
-        resume += indent + "Date: " + date + "\n";
-        resume += indent + "Remplis Par: " + remplisPar + "\n";
-        resume += indent + "BR: " + br + "\n";
-        resume += indent + "Games:\n";
+        StringBuilder resume = new StringBuilder(indent + "Session ID: " + id + "\n");
+        resume.append(indent).append("Date: ").append(date).append("\n");
+        resume.append(indent).append("Remplis Par: ").append(remplisPar).append("\n");
+        resume.append(indent).append("BR: ").append(br).append("\n");
+        resume.append(indent).append("Games:\n");
         for (Game game : games) {
-            resume += game.resumeStatsGame(indentation + 1);
+            resume.append(game.resumeStatsGame(indentation + 1));
         }
-        return resume;
+        return resume.toString();
     }
 }
